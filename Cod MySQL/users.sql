@@ -1,0 +1,26 @@
+use biblioteca;
+DROP USER 'member'@localhost;
+CREATE USER 'member'@'localhost';
+GRANT SELECT ON biblioteca.* TO 'member'@'localhost';
+GRANT INSERT ON biblioteca.* TO 'member'@'localhost';
+GRANT UPDATE ON biblioteca.* TO 'member'@'localhost';
+GRANT DELETE ON biblioteca.* TO 'member'@'localhost';
+GRANT SHOW VIEW ON biblioteca.* TO 'member'@'localhost';
+GRANT EXECUTE ON PROCEDURE biblioteca.adaugare_imprumut_nou TO 'member'@'localhost';
+GRANT EXECUTE ON PROCEDURE biblioteca.adaugare_membru_nou TO 'member'@'localhost';
+GRANT EXECUTE ON PROCEDURE biblioteca.adaugare_rezervare_noua TO 'member'@'localhost';
+GRANT EXECUTE ON PROCEDURE biblioteca.restituire_imprumut TO 'member'@'localhost';
+GRANT EXECUTE ON PROCEDURE biblioteca.anulare_rezervare TO 'member'@'localhost';
+
+DROP USER 'employee'@localhost;
+CREATE USER 'employee'@'localhost';
+GRANT SELECT ON biblioteca.* TO 'employee'@'localhost';
+GRANT INSERT ON biblioteca.* TO 'employee'@'localhost';
+GRANT UPDATE ON biblioteca.* TO 'employee'@'localhost';
+GRANT DELETE ON biblioteca.* TO 'employee'@'localhost';
+GRANT SHOW VIEW ON biblioteca.* TO 'employee'@'localhost';
+GRANT EXECUTE ON PROCEDURE biblioteca.adaugare_membru_nou TO 'employee'@'localhost';
+GRANT EXECUTE ON PROCEDURE biblioteca.adaugare_tiparita TO 'employee'@'localhost';
+GRANT EXECUTE ON PROCEDURE biblioteca.adaugare_manuscris TO 'employee'@'localhost';
+GRANT EXECUTE ON PROCEDURE biblioteca.adaugare_opera TO 'employee'@'localhost';
+GRANT EXECUTE ON PROCEDURE biblioteca.adaugare_acces TO 'employee'@'localhost';
